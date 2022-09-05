@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.gallery {
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(5,200px);
+    justify-content: space-evenly;
+}
+
+.gallery img {
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.2);
+}
+
+.single-img {
+    padding-bottom: 15px;
+}
