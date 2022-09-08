@@ -6,21 +6,21 @@ function People() {
     const [people, setPeople] = useState([]);
     useEffect(()=>{
         axios.get("https://api.tvmaze.com/people")
-        .then((response)=>{
+        .then((response)=>{ 
+            setPeople(response.data);
             console.log(response.data);
-            setPeople(response.data)
         })
     },[]);
 
     return (
         <div className="gallery">
-            {people.map(p => {
-                return (
+            {people.filter(p => {return p.image != null}).map(p => {
+                return (  
                     <div className="single-img">
                         {p.image && <img src={p.image.medium} />}
                     </div>
                 )
-            })}
+            })};
         </div>
     )
 }
